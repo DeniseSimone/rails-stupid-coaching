@@ -3,15 +3,15 @@ class QuestionsController < ApplicationController
   end
 
   def answer
-    @answer = params[:question]
-    @something = ""
+    @answer = params[:ask]
+    @return = ""
     if @answer == "I am going to work"
-      @cena = "Great!"
-    elsif @answer.include?"?"
-      @something = "Silly question, get dressed and go to work!"
+      @return = "Great!"
+    elsif @answer.end_with?("?")
+      @return = "Silly question, get dressed and go to work!"
 
     else
-     @something = "I don't care, get dressed and go to work!"
+     @return = "I don't care, get dressed and go to work!"
     end
   end
 end
